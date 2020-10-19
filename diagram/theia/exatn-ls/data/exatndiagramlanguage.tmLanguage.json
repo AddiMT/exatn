@@ -1,0 +1,64 @@
+{
+    "name": "EDL",
+    "scopeName": "source.edl",
+    "fileTypes": ["edl"],
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "name": "keyword.control.tensors",
+            "match": "\\b(tensordiagram|tensor|dimension|=>|tensordiagram|tensornode|tensoredge|connectnode)\\b"
+        },
+        {
+            "name": "keyword.operator.tensors",
+            "match": "\\=\\>"
+        },
+        {
+            "name": "constant.numeric.tensors",
+            "match": "\\b[1-9][0-9]*\\b"
+        },
+        {
+            "name": "string.quoted.double.tensors",
+            "begin": "\"",
+            "end": "\""
+        },
+        {
+            "name": "string.quoted.single.tensors",
+            "begin": "'",
+            "end": "'"
+        }
+    ],
+    "repository": 
+        {
+            "comments": {
+                "patterns": [
+                    {
+                        "name": "comment.block.tensors",
+                        "begin": "/\\*",
+                        "beginCaptures": {
+                            "0": {
+                                "name": "punctuation.definition.comment.tensors"
+                            }
+                        },
+                        "end": "\\*/",
+                        "endCaptures": {
+                            "0": {
+                                "name": "punctuation.definition.comment.tensors"
+                            }
+                        }
+                    }, {
+                        "begin": "(^\\s+)?(?=//)",
+                        "beginCaptures": {
+                            "1": {
+                                "name": "punctuation.whitespace.comment.leading.cs"
+                            }
+                        },
+                        "end": "(?=$)",
+                        "name":"comment.line.tensors"
+                    }
+                ]
+            }
+        }
+    
+}

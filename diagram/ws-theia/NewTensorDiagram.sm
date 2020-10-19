@@ -1,0 +1,15 @@
+tensorsdiagram NewTensorDiagram
+
+dimension i
+dimension j
+dimension k
+
+
+tensor Aij
+    j=>Bjk
+
+   
+tensor Bjk
+
+
+tensor Cijk

@@ -1,0 +1,20 @@
+tensordiagram TensorDiagram
+
+dimension i
+dimension j
+dimension k
+
+
+tensor t0
+    i	=> t1
+   
+tensor t2
+i =>t4
+    j => t3
+
+tensor t3
+   
+tensor t1
+   
+tensor t4
+   

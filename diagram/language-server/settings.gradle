@@ -1,0 +1,2 @@
+include 'io.exatn.theia.edl'
+include 'io.exatn.theia.edl.ide'

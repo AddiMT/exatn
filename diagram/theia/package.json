@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "prepare": "lerna run prepare",
+    "start:browser": "cd browser-app && yarn start",
+    "rebuild:browser": "theia rebuild:browser",
+    "rebuild:electron": "theia rebuild:electron"
+  },
+  "devDependencies": {
+    "lerna": "2.4.0"
+  },
+  "workspaces": [
+    "exatn-sprotty", "exatn-ls", "browser-app", "electron-app"
+
+  ]
+}

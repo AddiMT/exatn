@@ -1,0 +1,40 @@
+{
+  "name": "exatn-ls",
+  "keywords": [
+    "theia-extension"
+  ],
+  "version": "0.0.0",
+  "files": [
+    "lib",
+    "src",
+    "build",
+    "data"
+  ],
+  "dependencies": {
+    "@theia/core": "1.0.0",
+    "@theia/monaco": "1.0.0",
+    "sprotty-theia": "0.8.0",
+    "exatn-sprotty": "0.0.0"
+  },
+  "devDependencies": {
+    "cpr": "latest",
+    "cross-zip-cli": "latest",
+    "rimraf": "latest",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "install:languageserver": "rimraf -rf ./build && mkdir build && yarn copy:languageserver && yarn unzip:languageserver",
+    "copy:languageserver": "cpr ../../language-server/io.exatn.theia.edl.ide/build/distributions/edl-language-server.zip ./edl-language-server.zip -o",
+    "unzip:languageserver": "cross-unzip ./edl-language-server.zip ./build/",
+    "prepare": "yarn run clean && yarn install:languageserver && yarn run build",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "theiaExtensions": [
+    {
+      "frontend": "lib/frontend/exatn-ls-frontend",
+      "backend": "lib/backend/exatn-ls-backend"
+    }
+  ]
+}

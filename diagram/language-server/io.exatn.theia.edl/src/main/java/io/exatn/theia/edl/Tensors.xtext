@@ -1,0 +1,16 @@
+grammar io.exatn.theia.edl.Tensors with org.eclipse.xtext.common.Terminals
+
+generate tensors "Tensors" 
+
+TensorDiagram:
+	'tensordiagram' name=ID
+	(tensors+=Tensor | dimensions+=Dimension)*;
+	
+Tensor:
+	'tensor' name=ID operations+=Operation*;
+	
+Dimension: 
+	'dimension' name=ID;
+	
+Operation:
+dimension=[Dimension] '=>' tensor=[Tensor];
